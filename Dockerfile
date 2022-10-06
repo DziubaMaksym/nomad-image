@@ -16,4 +16,7 @@ RUN apt-get update && \
   wget --quiet https://releases.hashicorp.com/nomad/"$NOMAD_VERSION"/nomad_"$NOMAD_VERSION"_linux_amd64.zip && \
   unzip /nomad/nomad_"$NOMAD_VERSION"_linux_amd64.zip && \
   rm -rf nomad_"$NOMAD_VERSION"_linux_amd64.zip && \
-  mv nomad /usr/bin
+  mv nomad /bin && \
+  nomad -version
+FROM debian:latest as result
+COPY --from=builder /bin/nomad /bin/nomad
