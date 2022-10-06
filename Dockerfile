@@ -2,9 +2,8 @@ FROM debian:latest as builder
 LABEL maintainer="dziubamaksym@pm.me"
 SHELL ["/bin/bash", "-c"]
 WORKDIR /nomad
-ARG NOMAD_VERSION
 ARG DEBIAN_FRONTEND=noninteractive
-ENV NOMAD_VERSION=$NOMAD_VERSION
+ENV NOMAD_VERSION=1.4.1
 RUN apt-get update && \
   apt-get --yes --no-install-recommends install \
   ca-certificates \
