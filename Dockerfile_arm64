@@ -3,7 +3,7 @@ LABEL maintainer="dziubamaksym@pm.me"
 SHELL ["/bin/bash", "-c"]
 WORKDIR /nomad
 ARG DEBIAN_FRONTEND=noninteractive
-ENV NOMAD_VERSION=1.4.0
+ENV NOMAD_VERSION=1.4.1
 RUN apt-get update && \
   apt-get --yes --no-install-recommends install \
   ca-certificates \
